@@ -2,16 +2,14 @@
 <j:jelly xmlns:j="jelly:core" xmlns:l="/lib/layout">
   <div class="jenkins-dropdown">
     <div class="jenkins-dropdown__heading">${it.getDisplayName()}</div>
-    <div class="fup-favorite-dev">
-      <j:forEach var="favorite" items="${it.favorites}">
-        <a href="${it.toItemUrl(favorite)}"
-           class="jenkins-dropdown__item">
-          <div class="jenkins-dropdown__item__icon">
-            <l:icon src="symbol-star plugin-ionicons-api" />
-          </div>
-          ${favorite}
-        </a>
-      </j:forEach>
-    </div>
+    <j:forEach var="favorite" items="${it.favorites}">
+      <a href="${it.toItemUrl(favorite)}"
+         class="jenkins-dropdown__item">
+        <div class="jenkins-dropdown__item__icon">
+          <l:icon src="symbol-star plugin-ionicons-api" class="jenkins-!-color-yellow" />
+        </div>
+        ${favorite}
+      </a>
+    </j:forEach>
   </div>
 </j:jelly>
